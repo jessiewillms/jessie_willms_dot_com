@@ -1,0 +1,36 @@
+.container__menu-padding,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+	padding: 0;
+	margin: 0;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+.ul__container {
+	&--social-media {
+		li {
+			
+		}
+	}
+}

@@ -1,0 +1,30 @@
+.grid__two-third {
+	flex-basis: 75%;
+	@media screen and (max-width: $breakpoint_mobile) {
+		flex-basis: 100%;
+	}
+}
+
+.grid__third {
+	flex-basis: 25%;
+
+	@media screen and (max-width: $breakpoint_mobile) {
+		flex-basis: 100%;
+	}
+}
+
+.image__logo {
+	max-width: 200px;
+}
+
+.container--header {
+	display: flex;
+	padding: $padding__medium 5px;
+	align-items: center;
+}
+
+.max-width {
+	max-width: $max-width;
+	display: block;
+	margin: 0 auto;
+}

@@ -1,0 +1,67 @@
+$width_smallest: 19.59798995%;
+$width_medium: 34.780189204%;
+
+.wrapper_portfolio-content {
+	display: flex;
+	flex-wrap: wrap;
+    
+    max-width: $max-width;
+
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+.wrapper_portfolio-gallery {
+    .wrapper_portfolio {
+        height: $height * 1.5;
+    }
+}
+
+.wrapper_portfolio {
+    height: $height;
+    overflow: hidden;
+
+    margin: 5px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+    img { width: 100%; }
+
+    &-1,
+    &-5 {
+    	width: calc(45.52031163% - 10px);
+    }
+    &-6,
+    &-2 {
+    	width: calc(#{$width_smallest} - 10px);
+        background: $color__primary !important;
+    }
+    &-3,
+    &-4 {
+    	width: calc(#{$width_medium} - 10px);
+    }
+    &-0 {
+        width: calc(100% - (#{$width_smallest} - 10px));
+    }
+
+    &-7 {
+        width: calc( (100% - #{$width_medium} ) - 10px);
+    }
+    &-8 {
+        width: calc( #{$width_medium} - 10px );
+    }
+    &-9 {
+        width: calc(100% - 10px);
+    }
+
+}
+
+.portfolio_items {
+    max-width: 778px;
+    display: block;
+    margin: 0 auto;
+}

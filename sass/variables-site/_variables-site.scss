@@ -1,0 +1,28 @@
+$height: 225px;
+
+$size__height-x-large: 475px;
+$size__height-large: 355px;
+
+$max-width: 1025px;
+
+$breakpoint_mobile: 500px;
+
+@media screen and (max-width: $breakpoint_mobile) {
+	html {
+		border: 5px solid red;
+	}
+}
+
+$size__wrapper_outer: 100%;
+$size__site-sidebar: 25%;
+
+$padding__large: 5rem;
+$padding__medium: 3rem;
+$padding__small: 1.5rem;
+$padding__x-small: .5rem;
+
+$darken: 20;
+
+@import "colors";
+@import "typography";
+@import "structure";

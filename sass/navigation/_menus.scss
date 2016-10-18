@@ -1,0 +1,62 @@
+$breakpoint_mobile: 500px;
+
+.main-navigation {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+
+	color: $color__primary;
+
+	.nav-menu {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		justify-content: flex-end;
+
+		@media screen and (max-width: $breakpoint_mobile) {
+			display: none;
+		}
+
+		li {
+			list-style-type: none;
+			padding: 0 $padding__small;
+		}
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.wrapper_outer & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
