@@ -28,23 +28,23 @@
 					        $social_media_platform_url = get_sub_field('social_media_url','option');
 
 					        if ($social_media_platform == 'Twitter') {
-					        	echo '<i class="fa fa-twitter" aria-hidden="true"></i>';
+					        	echo '<li><i class="fa fa-twitter" aria-hidden="true"></i><a href="' . $social_media_platform_url . '">' . $social_media_platform . '</a></li>';
+
 					        } elseif ($social_media_platform == 'LinkedIn') {
-					        	echo '<i class="fa fa-linkedin" aria-hidden="true"></i>';
+					        	echo '<li><i class="fa fa-linkedin" aria-hidden="true"></i><a href="' . $social_media_platform_url . '">' . $social_media_platform . '</a></li>';
+
 					        } elseif ($social_media_platform == 'Facebook') {
-					        	echo '<i class="fa fa-facebook" aria-hidden="true"></i>';
+					        	echo '<li><i class="fa fa-facebook" aria-hidden="true"></i><a href="' . $social_media_platform_url . '">' . $social_media_platform . '</a></li>';
+
 					        } elseif ($social_media_platform == 'Spotify') {
-					        	echo '<i class="fa fa-spotify" aria-hidden="true"></i>';
+					        	echo '<li><i class="fa fa-spotify" aria-hidden="true"></i><a href="' . $social_media_platform_url . '">' . $social_media_platform . '</a></li>';
+
 					        } elseif ($social_media_platform == 'Instagram') {
-					        	echo '<i class="fa fa-instagram" aria-hidden="true"></i>';
+					        	echo '<li><i class="fa fa-instagram" aria-hidden="true"></i><a href="' . $social_media_platform_url . '">' . $social_media_platform . '</a></li>';
 					        }
-
-					        echo '<li><a href="' . $social_media_platform_url . '">' . $social_media_platform . '</a></li>';
-
+					        
 					    endwhile;
-
 					endif;
-
 					?>
 				</ul>
 		

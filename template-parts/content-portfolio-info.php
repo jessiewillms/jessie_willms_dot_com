@@ -25,6 +25,11 @@
 
 ?>
 
+<!--
+=================================================
+Start Header Section
+=================================================
+-->
 <?php if (is_single() ) : ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php endif ?>
@@ -35,37 +40,63 @@
 			<img src="<?php echo $thumb_url; ?>" alt="">
 		</div>
 
-		<h1 class="portfolio-title"><?php the_title(); ?></h1>
+		<div class="portfolio-title-wrap flexbox__flex-center flexbox__display-flex">
+			<h1 class="portfolio-title"><?php the_title(); ?></h1>
+		</div>
+
 		
 	</header>
 	
+<!--
+=================================================
+Start Section Details
+=================================================
+-->
 <?php if ( !empty($portfolio_client_name) ): ?>
 	<!-- section details -->
-	<section class="portfolio-details">
-		<?php 
-			$portfolio_client_name ? false : true;
-			echo '<h3>' . esc_html__($portfolio_client_name) . '</h3>';
-		?>
-
-		<?php 
-			$portfolio_client_name_other ? false : true;
-			echo '<p>' . esc_html__($portfolio_client_name_other) . '</p>';
-		?>
-
-		<?php 
-			$portfolio_client_url ? false : true;
-			echo '<p>' . esc_html__($portfolio_client_url) . '</p>';
-		?>
-
+	<section class="flexbox__display-flex portfolio-details">
 		<!-- Short description (text area) -->
+		<aside class="wrapper_portfolio__details-inner wrapper_portfolio-0">
 		<?php 
 			$portfolio_short_desc ? false : true;
-			echo $portfolio_short_desc;
+			echo $portfolio_short_desc; // NOTE: this is a text area, no p tags needed
+		?>
+		</aside><!-- // End description (text area) -->
+
+		<!-- Start innner wrapper -->
+		<article class="wrapper_portfolio-2 flexbox__display-flex flexbox__flex-column flexbox__space-between wrapper_portfolio__details-inner">
+		<div class="wrapper_portfolio__details-inner-top">
+		<?php 
+			$portfolio_client_name_other ? false : true;
+			echo '<p>Other: ' . esc_html__($portfolio_client_name_other) . '</p>';
 		?>
 
+		<!-- Portfolio project type details-->
+		<?php 
+			$portfolio_project_type ? false : true;
+			echo '<p>Project type: ' . esc_html__($portfolio_project_type) . '</p>';
+		?> 
+
+		<?php 
+			$portfolio_project_type_other ? false : true;
+			// echo '<p>' . esc_html__($portfolio_project_type_other) . '</p>';
+		?>
+		</div>
+	
+		<?php 
+			$portfolio_client_url ? false : true;
+			echo '<div class="wrapper_portfolio__details-inner-bottom flexbox__flex-end"><a href="' . esc_html__($portfolio_client_url) . '" class="para__align-center button button__large-white">View project</a></div>';
+		?>
+		</article>
+		<!-- // End innner wrapper -->
 	</section>
 <?php endif ?>
 
+<!--
+=================================================
+Start Portfolio Gallery
+=================================================
+-->
 <?php 
 if( $portfolio_gallery ): ?>
     <section class="wrapper_portfolio-gallery">
@@ -85,18 +116,18 @@ if( $portfolio_gallery ): ?>
     </section>
 <?php endif; ?>
 
+<!-- project_award_name -->
 
-<section class="portfolio-details">
-	<!-- Portfolio project type -->
-	<?php 
-		$portfolio_project_type ? false : true;
-		echo '<section>' . esc_html__($portfolio_project_type) . '</section>';
-	?> 
-
-	<?php 
-		$portfolio_project_type_other ? false : true;
-		echo '<section class="abc">' . esc_html__($portfolio_project_type_other) . '</section>';
-	?>
+<!--
+=================================================
+Start Project Awards and Nominations
+=================================================
+-->
+<?php
+	if ($project_award_name !== '') {
+		echo '<section class="portfolio-details portfolio-details-awards-nomination">';
+	}
+?>
 
 	<!-- Awards & nominations -->
 	<?php 
@@ -118,8 +149,30 @@ if( $portfolio_gallery ): ?>
 		$project_awards_url ? false : true;
 		echo '<section>' . esc_url($project_awards_url) . '</section>';
 	?>
-</section>
+<?php
+	if ($project_award_name !== '') {
+		echo '</section>';
+	}
+?>
 
+<!--
+=================================================
+Start Related Testimonial
+=================================================
+-->
+<?php 
+$posts = get_field('related_testimonial');
+if( $posts ): ?>
+    <section class="wrapper_portfolio__details-inner ">
+    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+        <?php setup_postdata($post); ?>
+        	<h3 class="para__align-center"><?php the_title(); ?> — <?php the_field('testimonials_name'); ?></h3>
+        	<p class="para__align-center"><a href="<?php the_permalink(); ?>">View testimonal for this project</a></p>
+        	<?php the_content(); ?>
+    <?php endforeach; ?>
+    </section>
+    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>
 
 <?php if (is_single() ) : ?>
 	</article><!-- #post-## -->

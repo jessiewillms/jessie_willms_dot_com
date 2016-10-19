@@ -2,6 +2,7 @@ $height: 225px;
 
 $size__height-x-large: 475px;
 $size__height-large: 355px;
+$size__height-small: 200px;
 
 $max-width: 1025px;
 
@@ -22,6 +23,13 @@ $padding__small: 1.5rem;
 $padding__x-small: .5rem;
 
 $darken: 20;
+
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
 
 @import "colors";
 @import "typography";

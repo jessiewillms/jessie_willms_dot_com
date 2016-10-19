@@ -8,6 +8,9 @@
 <?php if ( !empty($thumb_url) ): ?>
 	
 	<section class="container--header-main flexbox__flex-center flexbox__display-flex flexbox__flex-column" style="background:url('<?php echo $thumb_url; ?>');"">
+
+		<div class="wrapper_inner">
+			
 		
 		<h2 class="para__align-center"><?php the_title(); ?></h2>
 					
@@ -23,6 +26,7 @@
 			<?php endif; ?>
 		</div>
 
+		</div>
 	</section>
 
 <?php endif ?>

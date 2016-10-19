@@ -15,7 +15,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area wrapper_outer">
-		<main id="main" class="wrapper_inner" role="main">
+		<main id="main" class="max-width" role="main">
 			
 			<!-- Get loop for portfolio items -->
 			<?php get_template_part('template-parts/loop','portfolio-items'); ?>

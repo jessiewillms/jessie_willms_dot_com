@@ -18,6 +18,10 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
+			the_content();
+			get_template_part('template-parts/page-template-quote');
+			get_template_part('template-parts/page-template-paragraph');
+
 			endwhile; // End of the loop.
 			?>
 

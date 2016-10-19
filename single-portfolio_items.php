@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="wrapper_outer" role="main">
+		<main id="main" class="_wrapper_outer" role="main">
 
 		<?php
 		while ( have_posts() ) : the_post();
@@ -19,7 +19,10 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'portfolio-info' );
 
-			the_post_navigation();
+			echo '<div id="nav-below" class="wrapper_inner post-navigation">';
+	        echo previous_post_link('%link', '&larr; %title');
+	        echo next_post_link('%link', '%title &rarr;');
+	        echo '</div>';
 
 		endwhile; // End of the loop.
 		?>

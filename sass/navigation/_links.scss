@@ -1,4 +1,4 @@
-a {
+a.link__regular {
 	color: $color__link;
 
 	&:visited {
@@ -17,7 +17,6 @@ a {
 		outline: 0;
 	}
 }
-
 
 .li__no-bullet {
 	list-style-type: none;
