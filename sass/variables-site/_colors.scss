@@ -1,6 +1,8 @@
 $color__primary: 	#4B9DD6;
 $color__secondary: 	#F69321;
 $color__tertiary: 	#FED713;
+$color__light-grey: 	#f8f8f8;
+
 $color__lightest: 	#fff;
 
 $color__darkest: #37343E;
@@ -36,6 +38,14 @@ $color__border-abbr: #666;
 	&__color-grey {
 		background: $color__grey;
 		color: $color__darkest;
-	} 
+	}
+	&__color-light-grey {
+		background: $color__light-grey;
+		color: $color__darkest;
+	}
+	&__color-blue {
+		background: $color__primary;
+		color: $color__lightest;
+	}  
 }
 

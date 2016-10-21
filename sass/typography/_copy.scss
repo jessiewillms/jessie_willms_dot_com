@@ -2,6 +2,16 @@ p + p {
 	margin-top: 1.5rem;
 }
 
+.para,
+p {
+	&__large {
+		font-size: 1.6rem;
+	}
+	&__small {
+		font-size: .8rem;
+	}
+}
+
 dfn, cite, em, i {
 	font-style: italic;
 }

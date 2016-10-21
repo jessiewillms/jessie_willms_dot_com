@@ -35,7 +35,7 @@ if ( $get_portfolio_items->have_posts() ) {
 
 		$portfolio_hp_inner = '<div class="wrapper_portfolio-inner">' . $portfolio_title . '</div>';
 
-		$portfolio_wrap = '<div class="wrapper_portfolio wrapper_portfolio-' . $counter . '" style="background:url(' . $thumb_url . ');">' . $portfolio_hp_inner . '</div>';
+		$portfolio_wrap = '<div class="flexbox__display-flex wrapper_portfolio wrapper_portfolio-' . $counter . '" style="background:url(' . $thumb_url . ');">' . $portfolio_hp_inner . '</div>';
 
 		echo $portfolio_wrap;
 	}

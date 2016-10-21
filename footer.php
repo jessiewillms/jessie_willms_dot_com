@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 /**
  * The template for displaying the footer.
  *
@@ -11,7 +11,7 @@
 
 ?>
 
-	</div><!-- #content -->
+	</div><! #content-->
 
 	<footer id="colophon" role="contentinfo">
 		<div class="flexbox__display-flex flexbox__flex-end">
@@ -46,12 +46,11 @@
 					    endwhile;
 					endif;
 					?>
-				</ul>
+			</ul>
 		
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 </body>

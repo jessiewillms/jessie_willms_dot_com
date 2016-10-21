@@ -25,7 +25,7 @@ $width_medium: 34.780189204%;
 
     margin: 5px;
 	
-	display: flex;
+	// display: flex;
 	align-items: center;
 	justify-content: center;
 
@@ -49,13 +49,15 @@ $width_medium: 34.780189204%;
     }
 
     &-7 {
-        width: calc( (100% - #{$width_medium} ) - 10px);
+        width: calc( #{$width_medium} - 10px );
     }
     &-8 {
-        width: calc( #{$width_medium} - 10px );
+        width: calc( (100% - #{$width_medium} ) - 10px);
+        background: yellow;
     }
     &-9 {
         width: calc(100% - 10px);
+        background: red;
     }
 
     &__details-inner {
@@ -66,6 +68,11 @@ $width_medium: 34.780189204%;
         }
         &-top {
             // nothing
+        }
+    }
+    &-long-description {
+        p { 
+            font-size: 22px;
         }
     }
 }
@@ -92,8 +99,8 @@ html, body {overflow-x: hidden}
         margin-right: calc(-50vw + 50%);
     }
     .portfolio-title-wrap {
-        margin-top: calc( #{ -$size__height-small } / 2 );
-        height: $size__height-small;
+        margin-top: calc( #{ -$size__height-small } / 4 );
+        height: $size__height-small / 2;
         position: relative;
         background: $color__secondary;
         z-index: 99;

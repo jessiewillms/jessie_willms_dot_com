@@ -5,6 +5,8 @@
 	$portfolio_url = get_field('portfolio_url');
 	$portfolio_short_desc = get_field('portfolio_short_desc');
 
+	$portfolio_short_desc_long = get_field('portfolio_short_desc_long');
+
 	// Gallery
 	$portfolio_gallery = get_field('portfolio_gallery');
 
@@ -53,25 +55,37 @@ Start Section Details
 =================================================
 -->
 <?php if ( !empty($portfolio_client_name) ): ?>
-	<!-- section details -->
-	<section class="flexbox__display-flex portfolio-details">
-		<!-- Short description (text area) -->
-		<aside class="wrapper_portfolio__details-inner wrapper_portfolio-0">
+	<!--
+	=================================================
+	Start Parent wrapper
+	=================================================
+	-->
+	<section class="wrapper_portfolio-gallery flexbox__display-flex">
+		
+		<aside class="wrapper_portfolio wrapper_portfolio-8">
 		<?php 
 			$portfolio_short_desc ? false : true;
 			echo $portfolio_short_desc; // NOTE: this is a text area, no p tags needed
 		?>
 		</aside><!-- // End description (text area) -->
 
-		<!-- Start innner wrapper -->
-		<article class="wrapper_portfolio-2 flexbox__display-flex flexbox__flex-column flexbox__space-between wrapper_portfolio__details-inner">
+		<!--
+		=================================================
+		Start Wrapper for the inside content
+		=================================================
+		-->
+		<article class="wrapper_portfolio-7 wrapper_portfolio__details-inner flexbox__display-flex flexbox__flex-column flexbox__space-between background__color-light-grey">
 		<div class="wrapper_portfolio__details-inner-top">
 		<?php 
 			$portfolio_client_name_other ? false : true;
 			echo '<p>Other: ' . esc_html__($portfolio_client_name_other) . '</p>';
 		?>
 
-		<!-- Portfolio project type details-->
+		<!--
+		=================================================
+		Start Portfolio project type details
+		=================================================
+		-->
 		<?php 
 			$portfolio_project_type ? false : true;
 			echo '<p>Project type: ' . esc_html__($portfolio_project_type) . '</p>';
@@ -87,9 +101,8 @@ Start Section Details
 			$portfolio_client_url ? false : true;
 			echo '<div class="wrapper_portfolio__details-inner-bottom flexbox__flex-end"><a href="' . esc_html__($portfolio_client_url) . '" class="para__align-center button button__large-white">View project</a></div>';
 		?>
-		</article>
-		<!-- // End innner wrapper -->
-	</section>
+		</article><!-- // End Parent wrapper -->
+	</section><!-- // End parent wrapper -->
 <?php endif ?>
 
 <!--
@@ -115,41 +128,56 @@ if( $portfolio_gallery ): ?>
     </ul>
     </section>
 <?php endif; ?>
-
 <!-- project_award_name -->
+
+
+<!--
+=================================================
+Start Long description
+=================================================
+-->
+<?php if ($portfolio_short_desc_long): ?>
+	<div class="wrapper_portfolio-long-description para__large">
+		<?php echo $portfolio_short_desc_long ?>
+	</div>	
+<?php endif ?>
 
 <!--
 =================================================
 Start Project Awards and Nominations
 =================================================
 -->
-<?php
-	if ($project_award_name !== '') {
-		echo '<section class="portfolio-details portfolio-details-awards-nomination">';
-	}
-?>
+	<?php
+		if ($project_award_name !== '') {
+			echo '<section class="portfolio-details portfolio-details-awards-nomination">';
+		}
+	?>
 
 	<!-- Awards & nominations -->
 	<?php 
-		$project_award_name ? false : true;
-		echo '<section>' . esc_html__($project_award_name) . '</section>';
+		if ($project_award_name) {
+			echo '<section>' . esc_html__($project_award_name) . '</section>';
+		}
 	?>
 
 	<?php 
-		$project_awards ? false : true;
-		echo '<section>' . esc_html__($project_awards) . '</section>';
+		if ($project_awards) {
+			echo '<section>' . esc_html__($project_awards) . '</section>';
+		}
 	?>
 
 	<?php 
-		$project_awards_desc ? false : true;
-		echo '<section>' . $project_awards_desc . '</section>';
+		if ($project_awards_desc) {
+		 	echo '<section>' . $project_awards_desc . '</section>';
+		}
 	?>
 
 	<?php 
-		$project_awards_url ? false : true;
-		echo '<section>' . esc_url($project_awards_url) . '</section>';
+		if ($project_awards_url) {
+			echo '<section>' . esc_url($project_awards_url) . '</section>';
+		}
 	?>
-<?php
+	<?php
 	if ($project_award_name !== '') {
 		echo '</section>';
 	}

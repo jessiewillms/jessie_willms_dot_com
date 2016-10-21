@@ -9,13 +9,14 @@ input[type="submit"] {
 	// background: $color__primary;
 	// 
 	text-decoration: none;
+	margin: 0 20px;
 	
 	&__large {
+		padding: 5px;
+		text-align: center;
+		display: block;
 		
 		&-white {
-			padding: 5px;
-			text-align: center;
-			display: block;
 
 			border-color: 		$color__lightest;
 			border: 1px solid;

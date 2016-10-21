@@ -27,6 +27,10 @@ get_header(); ?>
 		endwhile; // End of the loop.
 		?>
 
+		<?php 
+			get_template_part('template-parts/page-template-link-to-contact');
+		?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

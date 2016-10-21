@@ -21,6 +21,11 @@ get_header(); ?>
 			the_content();
 			get_template_part('template-parts/page-template-quote');
 			get_template_part('template-parts/page-template-paragraph');
+			get_template_part('template-parts/page-template-work-history');
+
+			get_template_part('template-parts/component-services');
+
+			get_template_part('template-parts/page-template-link-to-contact');
 
 			endwhile; // End of the loop.
 			?>
@@ -31,3 +36,5 @@ get_header(); ?>
 <?php
 // get_sidebar();
 get_footer();
+
+

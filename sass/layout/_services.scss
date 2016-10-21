@@ -1,0 +1,13 @@
+.wrapper__services {
+	&-1,
+	&-2,
+	&-3 {
+		width: calc((100% / 3) - 10px);
+		margin: 5px;
+		padding: 10px;
+	}
+
+	&-2 {
+		@extend .background__color-orange;
+	}
+}
